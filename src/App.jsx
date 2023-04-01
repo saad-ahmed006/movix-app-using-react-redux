@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { fetchDataFromApi } from "./Utils/api"
 import { useSelector, useDispatch } from 'react-redux'
 import { getApiConfiguration } from "./Store/HomeSlice"
-import { BrowserRouter as Router ,Routes,Route,} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 import Home from "./Pages/Home/Home"
 import Explore from "./Pages/Explore/Explore"
 import Error from "./Pages/Error/Error"
@@ -26,18 +26,17 @@ function App() {
   }
   return (
     <>
-      <h1>This is react js project </h1>
       <Router>
-        <Header/>
+        {/* <Header /> */}
         <Routes>
-      <Route exact path="/" element={<Home/>} />
-      <Route exact path="/:mediaType/:id" element={<Detail/>} />
-      <Route exact path="/search/:query" element={<SearchResult/>} />
-      <Route exact path="/explore/:mediaType" element={<Explore/>} />
-      <Route exact path="*" element={<Error/>} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/:mediaType/:id" element={<Detail />} />
+          <Route exact path="/search/:query" element={<SearchResult />} />
+          <Route exact path="/explore/:mediaType" element={<Explore />} />
+          <Route exact path="*" element={<Error />} />
         </Routes>
-        <Footer/>
-    </Router>
+        {/* <Footer /> */}
+      </Router>
     </>
   )
 }
