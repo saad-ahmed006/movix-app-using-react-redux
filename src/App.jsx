@@ -9,7 +9,7 @@ import Error from "./Pages/Error/Error"
 import Detail from "./Pages/Detail/Detail"
 import SearchResult from "./Pages/SearchResult/SearchResult"
 import Header from "./Component/Header/Header"
-import Footer from "./Component/Footer/Footer";
+// import Footer from "./Component/Footer/Footer";
 
 function App() {
   const dispatch = useDispatch()
@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <Router>
-        {/* <Header /> */}
+        <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/:mediaType/:id" element={<Detail />} />
