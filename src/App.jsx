@@ -9,7 +9,7 @@ import Error from "./Pages/Error/Error"
 import Detail from "./Pages/Detail/Detail"
 import SearchResult from "./Pages/SearchResult/SearchResult"
 import Header from "./Component/Header/Header"
-// import Footer from "./Component/Footer/Footer";
+import Footer from "./Component/Footer/Footer";
 
 function App() {
   const dispatch = useDispatch()
@@ -20,11 +20,11 @@ function App() {
 
   const fetchApiconfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
-      // console.log(res);
-      const url={
-        backdrop:res.images.secure_base_url+"original",
-        poster:res.images.secure_base_url+"original",
-        profile:res.images.secure_base_url+"original"
+      console.log(res);
+      const url = {
+        backdrop: res?.images?.secure_base_url + "original",
+        poster: res?.images?.secure_base_url + "original",
+        profile: res?.images?.secure_base_url + "original"
       }
       dispatch(getApiConfiguration(url))
     })
@@ -40,7 +40,7 @@ function App() {
           <Route exact path="/explore/:mediaType" element={<Explore />} />
           <Route exact path="*" element={<Error />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </>
   )
