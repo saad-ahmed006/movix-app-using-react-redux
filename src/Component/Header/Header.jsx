@@ -17,9 +17,9 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
-window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }, [location])
-  
+
   const openSearch = () => {
     setMobileMenu(false);
     setShowSearch(true);
