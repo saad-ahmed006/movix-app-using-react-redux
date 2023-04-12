@@ -11,6 +11,7 @@ import PosterFallback from "../../assets/no-poster.png";
 import './Carasul.scss'
 import dayjs from "dayjs";
 import CircleRating from "../CircleRating/CircleRating";
+import Generes from "../Generes/Generes";
 export default function Carasul({ data, loading }) {
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate()
@@ -20,15 +21,15 @@ export default function Carasul({ data, loading }) {
 
   const skItem = () => {
     return (
-        <div className="skeletonItem">
-            <div className="posterBlock skeleton"></div>
-            <div className="textBlock">
-                <div className="title skeleton"></div>
-                <div className="date skeleton"></div>
-            </div>
+      <div className="skeletonItem">
+        <div className="posterBlock skeleton"></div>
+        <div className="textBlock">
+          <div className="title skeleton"></div>
+          <div className="date skeleton"></div>
         </div>
+      </div>
     );
-};
+  };
 
   return (
 
@@ -51,7 +52,8 @@ export default function Carasul({ data, loading }) {
               return <div className="carouselItem" key={item.id}>
                 <div className="posterBlock">
                   <Img src={posterUrl} />
-                  <CircleRating rating={item.vote_average.toFixed(1)}/>
+                  <CircleRating rating={item.vote_average.toFixed(1)} />
+                  <Generes data={item.genre_ids.slice(0,2)}/>
                 </div>
                 <div className="textBlock">
                   <span className="title">
@@ -70,12 +72,12 @@ export default function Carasul({ data, loading }) {
           </div>
         ) : (
           <div className="loadingSkeleton">
-          {skItem()}
-          {skItem()}
-          {skItem()}
-          {skItem()}
+            {skItem()}
+            {skItem()}
+            {skItem()}
+            {skItem()}
           </div>
-          )
+        )
         }
       </ContentWrapper>
     </div>
