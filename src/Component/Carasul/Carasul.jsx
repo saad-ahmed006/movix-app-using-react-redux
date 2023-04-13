@@ -12,7 +12,7 @@ import './Carasul.scss'
 import dayjs from "dayjs";
 import CircleRating from "../CircleRating/CircleRating";
 import Generes from "../Generes/Generes";
-export default function Carasul({ data, loading ,endpoint}) {
+export default function Carasul({ data, loading ,endpoint,title}) {
   const { url } = useSelector((state) => state.home);
   const carouselContainer = useRef();
 
@@ -47,6 +47,7 @@ export default function Carasul({ data, loading ,endpoint}) {
 
     <div className="carousel">
       <ContentWrapper>
+        {title && <div className="carouselTitle">{title}</div>}
         <BsFillArrowLeftCircleFill
           className="carouselLeftNav arrow"
           onClick={() => navigation("left")}

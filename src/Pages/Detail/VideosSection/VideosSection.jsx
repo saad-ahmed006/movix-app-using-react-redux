@@ -31,7 +31,7 @@ const VideosSection = ({ data, loading }) => {
                                     onClick={() => {
                                         setVideoId(video.key);
                                         setShow(true);
-                                    }}>
+                              }}>
                                     <div className="videoThumbnail">
                                         <Img
                                             src={`https://img.youtube.com/vi/${video.key}/mqdefault.jpg`}
