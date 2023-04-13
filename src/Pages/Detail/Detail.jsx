@@ -5,6 +5,7 @@ import DetailsBanner from './DetailBannar/DetailBannar'
 import Cast from './Cast/Cast'
 import VideosSection from './VideosSection/VideosSection'
 import Similar from './Carasols/Similar'
+import Recommendation from './Carasols/Recommandation'
 
 export default function Detail() {
   const { mediaType, id } = useParams()
@@ -17,6 +18,7 @@ export default function Detail() {
       <Cast data={credits?.cast} loading={creditsLoading}/>
       <VideosSection data={data} loading={loading}/>
       <Similar mediaType={mediaType} id={id} />
+      <Recommendation mediaType={mediaType} id={id}/>
 
 
     </div>
