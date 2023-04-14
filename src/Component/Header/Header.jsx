@@ -38,12 +38,12 @@ const Header = () => {
     }
   }
   const navigationHandler = (type) => {
-    if (type === 'movie') {
-      navigate('/explore/movie')
-    } else {
-      navigate('/explore/tv')
+    // if (type === 'movie') {
+      navigate(`/explore/${type}`)
+    // } else {
+      // navigate('/explore/tv')
 
-    }
+    // }
     setMobileMenu(false)
   }
   return (
